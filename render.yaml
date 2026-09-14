@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bidsetu-paddleocr
+    env: docker
+    region: singapore
+    plan: free
+    dockerfilePath: Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: USE_ANGLE_CLS
+        value: "true"
+      - key: MAX_FILE_SIZE_MB
+        value: "50"
